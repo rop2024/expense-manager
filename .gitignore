@@ -1,0 +1,19 @@
+# Node.js dependencies
+node_modules/
+
+# Tailwind generated CSS (if using build output file)
+public/build.css
+dist/
+build/
+
+# Output folders (Vite, Webpack, etc.)
+.vite/
+.next/
+out/
+.cache/
+.temp/
+
+# System files
+.DS_Store
+.env
+*.log
