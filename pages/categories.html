@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Manage Categories</title>
     <link href="../src/categories.css" rel="stylesheet" />
+    <script src="../scripts/category.js" defer></script>
 </head>
 <body class="min-h-screen flex flex-col antialiased">
 
@@ -16,25 +17,6 @@
     <!-- Main content -->
     <main class="flex-1 flex flex-col lg:flex-row items-center justify-center p-6 lg:p-12 gap-8 lg:gap-16">
 
-        <!-- Left: Add New Category -->
-        <section class="w-full lg:w-2/5 flex flex-col justify-center items-center p-4 bg-gray-800 rounded-xl shadow-2xl border border-gray-700">
-            <div class="w-full max-w-lg space-y-6">
-                <h2 class="text-2xl font-bold text-center mb-4 text-gray-200">Add New Category</h2>
-
-                <input type="text" placeholder="Category Name (e.g., Food)" id="categoryName"
-                    class="w-full px-5 py-3 bg-gray-700 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all duration-200" required>
-                <input type="number" placeholder="Monthly Budget Limit (e.g., 5000)" id="budgetLimit"
-                    class="w-full px-5 py-3 bg-gray-700 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all duration-200" step="0.01" required>
-
-                <button id="addCategoryButton"
-                    class="w-full py-3 bg-blue-600 hover:bg-blue-700 active:bg-blue-800 rounded-lg font-bold text-lg shadow-md hover:shadow-lg transition-all duration-200 transform hover:scale-105">
-                    Add Category
-                </button>
-
-                <div id="categoryMessage" class="text-yellow-400 text-center font-medium transition-all duration-300 ease-in-out hidden"></div>
-            </div>
-        </section>
-
         <!-- Right: Category List -->
         <section class="w-full lg:w-3/5 flex flex-col items-center p-4 bg-gray-800 rounded-xl shadow-2xl border border-gray-700">
             <h2 class="text-2xl font-bold text-center mb-6 text-gray-200">Your Categories</h2>
@@ -42,10 +24,7 @@
             <div class="w-full">
                 <div class="flex justify-between items-center mb-4">
                     <h3 class="text-xl font-semibold text-gray-200">Category List</h3>
-                    <button id="clearCategories"
-                        class="px-4 py-2 bg-red-600 hover:bg-red-700 active:bg-red-800 rounded-md font-semibold text-sm shadow-sm transition-all duration-200 opacity-70 hover:opacity-100 disabled:opacity-50 disabled:cursor-not-allowed">
-                        Clear All
-                    </button>
+                    
                 </div>
                 <ul id="categoryList" class="space-y-3 max-h-96 overflow-y-auto pr-2 custom-scrollbar">
                     <li class="text-gray-400 text-center py-4" id="noCategoriesMessage">No categories added yet.</li>
