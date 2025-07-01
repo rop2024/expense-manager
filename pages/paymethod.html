@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Payment Summary</title>
-    <script src="paymethods.js" defer></script>
+    <script src="../scripts/paymethod.js" defer></script>
     <link href="../src/output.css" rel="stylesheet" />
 </head>
 <body class="min-h-screen flex flex-col antialiased">
@@ -17,12 +17,12 @@
     <!-- Main content -->
     <main class="flex-1 flex flex-col items-center justify-center p-6 lg:p-12 gap-8">
         <section class="w-full max-w-2xl p-6 bg-gray-800 rounded-xl shadow-2xl border border-gray-700">
-            <h2 class="text-2xl font-bold text-center mb-6 text-gray-200">Amount Spent Per Method</h2>
+    <h2 class="text-2xl font-bold text-center mb-6 text-gray-200">Amount Spent Per Method</h2>
 
-            <ul id="methodSummary" class="space-y-4 text-lg text-center text-gray-200">
-                <li class="text-gray-400" id="noDataMsg">No expenses logged yet.</li>
-            </ul>
-        </section>
+    <ul id="methodSummary" class="flex justify-center gap-6 text-lg text-gray-200">
+        <li class="text-gray-400" id="noDataMsg">No expenses logged yet.</li>
+    </ul>
+</section>
     </main>
 
     <!-- Footer -->
