@@ -64,12 +64,15 @@ function main() {
         payMethodEl.value = "";
     });
 
-    resetBtn.addEventListener("click", ()=> {
+    resetBtn.addEventListener("click", () => {
+        const confirmReset = confirm("Are you sure you want to delete all records?");
+        if (!confirmReset) return;
+
         expManager.deleteAll();
         totalAmt.innerText = `₹0.00`;
         message.innerText = "All records deleted.";
         message.classList.remove("hidden");
-    });
+});
 
     // Initial load
     totalAmt.innerText = `₹${expManager.totalAmount().toFixed(2)}`;
