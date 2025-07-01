@@ -23,14 +23,14 @@
                 <h2 class="text-2xl font-bold text-center mb-4 text-gray-200">Add New Expense</h2>
 
                 <input type="number" placeholder="Amount (e.g., 150.75)" id="expenseInput"
-                    class="w-full px-5 py-3 bg-gray-700 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all duration-200" required step="0.01">
+                    class="w-full px-5 py-3 bg-gray-700 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all duration-200" required step="0.01" min="1">
                 <input type="text" placeholder="Description (e.g., Groceries for dinner)" id="descriptionInput"
                     class="w-full px-5 py-3 bg-gray-700 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all duration-200" required>
                 <input type="date" id="dateInput"
                     class="w-full px-5 py-3 bg-gray-700 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all duration-200" required>
                 <input type="text" placeholder="Category (e.g., Food, Transport)" id="categoryInput"
                     class="w-full px-5 py-3 bg-gray-700 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all duration-200" required>
-                <input type="text" placeholder="Payment Method (e.g., Card, Cash)" id="paymentMethodInput"
+                <input type="text" placeholder="Payment Method (e.g., Upi, Cash)" id="paymentMethodInput"
                     class="w-full px-5 py-3 bg-gray-700 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all duration-200" required>
 
                 <button id="addExpenseButton"
