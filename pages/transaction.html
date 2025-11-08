@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en" class="bg-gray-900 text-white font-sans">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Transaction Logs</title>
+  <script src="../scripts/transaction.js" defer></script>
+  <link href="../src/transaction.css" rel="stylesheet" />
+</head>
+<body class="min-h-screen flex flex-col antialiased">
+
+  <!-- Header -->
+  <header class="bg-gray-800 p-4 text-center shadow-lg rounded-b-lg">
+    <h1 class="text-3xl font-extrabold text-blue-400">Transaction Logs</h1>
+  </header>
+
+  <!-- Main content -->
+  <main class="flex-1 flex flex-col items-center justify-center p-6 lg:p-12 gap-8">
+
+    <!-- Transaction List Section -->
+    <section class="w-full max-w-4xl p-6 bg-gray-800 rounded-xl shadow-2xl border border-gray-700">
+      <h2 class="text-2xl font-bold text-center mb-6 text-gray-200">All Logged Expenses</h2>
+
+      <!-- Search and Filter Section -->
+      <div class="mb-6 p-4 bg-gray-700 rounded-lg">
+        <h3 class="text-lg font-semibold text-gray-200 mb-3">Search & Filter</h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+          <input type="text" id="searchDescription" placeholder="Search description..."
+                 class="px-3 py-2 bg-gray-600 border border-gray-500 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-white placeholder-gray-400">
+          
+          <select id="filterCategory" class="px-3 py-2 bg-gray-600 border border-gray-500 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-white">
+            <option value="">All Categories</option>
+          </select>
+          
+          <input type="date" id="filterDateFrom" class="px-3 py-2 bg-gray-600 border border-gray-500 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-white">
+          
+          <input type="date" id="filterDateTo" class="px-3 py-2 bg-gray-600 border border-gray-500 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-white">
+        </div>
+        
+        <div class="flex gap-4 mt-3">
+          <input type="number" id="filterAmountMin" placeholder="Min amount" step="0.01" min="0"
+                 class="px-3 py-2 bg-gray-600 border border-gray-500 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-white placeholder-gray-400 w-32">
+          
+          <input type="number" id="filterAmountMax" placeholder="Max amount" step="0.01" min="0"
+                 class="px-3 py-2 bg-gray-600 border border-gray-500 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-white placeholder-gray-400 w-32">
+          
+          <button onclick="clearFilters()" 
+                  class="px-4 py-2 bg-gray-600 hover:bg-gray-500 text-white rounded-lg transition duration-200">
+            Clear Filters
+          </button>
+        </div>
+      </div>
+
+      <ul id="logList" class="space-y-4 max-h-[500px] overflow-y-auto pr-2 custom-scrollbar">
+        <li class="text-gray-400 text-center py-4" id="noLogsMessage">No expenses logged yet.</li>
+      </ul>
+    </section>
+
+    <!-- Download Buttons -->
+    <div class="flex justify-center gap-4 mt-4">
+      <button 
+        onclick="downloadData()" 
+        class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-6 rounded-lg shadow-md transition duration-300 ease-in-out"
+      >
+        Download JSON
+      </button>
+      
+      <button 
+        onclick="downloadCSV()" 
+        class="bg-green-600 hover:bg-green-700 text-white font-semibold py-2 px-6 rounded-lg shadow-md transition duration-300 ease-in-out"
+      >
+        Download CSV
+      </button>
+    </div>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-gray-800 text-center p-4 text-sm text-gray-400 rounded-t-lg shadow-inner mt-auto">
+    Made by <a href="https://github.com/rop2024" class="text-blue-400">rop2024</a>
+  </footer>
+
+</body>
+</html>
